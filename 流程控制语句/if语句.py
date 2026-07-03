@@ -3,6 +3,7 @@
 # if score >= 680:
 #     print("欢迎报考清华大学！")
 # print("_________________")
+from traceback import print_tb
 
 #模拟b站账号登陆
 #账号：18888888888 密码666888
@@ -21,8 +22,35 @@
 #案例 根据用户输入的年份，判断这一年是闰年还是平年
 # 非整百年份，且能被4整除的年份是闰年
 # 整百年份必须能被400整除才是闰年
-year = int(input("请输入需要判断的年份："))
-if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-    print(f"{year}是闰年")
+# year = int(input("请输入需要判断的年份："))
+# if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+#     print(f"{year}是闰年")
+# else:
+#     print(f"{year}是平年")
+#
+
+# if...elif...else
+#案例：根据用户输入数字 判断数字是0 还是正数、负数
+# num = int(input("请输入一个整数："))
+# if num > 0:
+#     print(f"{num}是正数")
+# elif num < 0:
+#     print(f"{num}是负数")
+# else:
+#     print(f"{num}是0")
+
+#案例：三角形类型判断：根据输入的三个边长（正整数），判定是等边三角形、等腰三角形、普通三角形，还是构不成三角形
+side_1 = int(input("请输入第一个边长："))
+side_2 = int(input("请输入第二个边长："))
+side_3 = int(input("请输入第三个边长："))
+
+if side_1 + side_2 > side_3 and side_2 + side_3 > side_1 and side_1 + side_3 > side_2:
+    if  side_1 == side_2 or side_2 == side_3 or side_3 == side_1:
+        if side_1 == side_2 and side_2 == side_3:
+            print("这三条边构成等边三角形")
+        else:
+            print("这三条边构成等腰三角形")
+    else:
+        print("这三条边构成普通三角形")
 else:
-    print(f"{year}是平年")
+    print("这三条边无法构成三角形")
