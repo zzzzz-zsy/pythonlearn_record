@@ -35,4 +35,4 @@ else:
     print("感谢您的使用，欢迎下次光临~")
 # take_flag = True
 # take_flag = (input("是否继续取款？（1：继续，2：退卡）") == '1')
-# print(take_flag)
+print(take_flag)
