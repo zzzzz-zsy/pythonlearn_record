@@ -7,9 +7,10 @@
 # print(f"好的，您的名字是{name}，年龄是{age}")
 
 num_left = 10000
-num_password = 2
+num_password = 3
 take_flag = True
 input_password = input(f"请输入您的银行卡密码：")
+num_password = num_password -1
 while  take_flag :
     if input_password == "123456":
         print(f"您的银行卡余额为：{num_left}元")
@@ -35,4 +36,4 @@ else:
     print("感谢您的使用，欢迎下次光临~")
 # take_flag = True
 # take_flag = (input("是否继续取款？（1：继续，2：退卡）") == '1')
-print(take_flag)
+# print(take_flag)
