@@ -85,3 +85,4 @@ print("平均值:",sum(num_list)/len(num_list))
 
 
 
+
