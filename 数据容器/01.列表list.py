@@ -67,22 +67,98 @@
 #
 # print(s.count(100))
 
-#案例1，将用户输入的10个数字，存储到一个列表中，并将列表中的数字进行排序，输出其中的最小值、最大值和 平均值。
-num_list = []
+# #案例1，将用户输入的10个数字，存储到一个列表中，并将列表中的数字进行排序，输出其中的最小值、最大值和 平均值。
+# num_list = []
+#
+# for i in range(10):
+#     num_list.append( int(input("请输入一个数字:")))
+# print("数字列表:",num_list)
+#
+# num_list.sort()
+#
+# print("最大值:",num_list[-1])
+# print("最小值:",num_list[0]) #或者用 min() max()
+# #sum:求和 len:求长度
+# print("平均值:",sum(num_list)/len(num_list))
 
-for i in range(10):
-    num_list.append( int(input("请输入一个数字:")))
-print("数字列表:",num_list)
+# #案例2:合并两个列表中的元素，并对合并的结果进行去重处理(去除列表中的重复元素)
+# num_list1 = [19, 23, 54, 64, 875, 20, 109, 232, 123, 54]
+# num_list2 = [55, 80, 72, 35, 60, 123, 54, 29, 91]
+# #合并列表
+# for num in num_list2:
+#     # if num not in num_list1:
+#         num_list1.append(num)
+#
+# print(num_list1)
+# #去重处理
+# new_list = []
+# for num in num_list1:
+#     if num not in new_list:
+#         new_list.append(num)
+# print(new_list)
 
-num_list.sort()
+# #案例2(简化):合并两个列表中的元素，并对合并的结果进行去重处理(去除列表中的重复元素)
+# num_list1 = [19, 23, 54, 64, 875, 20, 109, 232, 123, 54]
+# num_list2 = [55, 80, 72, 35, 60, 123, 54, 29, 91]
+# #合并列表
+# # new_list1 = num_list1 + num_list2
+# # new_list1 = [*num_list1 , *num_list2] #解包然后再组包
+# new_list1 = [num_list1 ,num_list2]
+# print(new_list1)
+# #去重处理
+# new_list = []
+# for num in new_list1:
+#     if num not in new_list:
+#         new_list.append(num)
+# print(new_list)
 
-print("最大值:",num_list[-1])
-print("最小值:",num_list[0]) #或者用 min() max()
-#sum:求和 len:求长度
-print("平均值:",sum(num_list)/len(num_list))
+# #案例2:生成1-20的平方列表
+# #方法一:
+# num_list = []
+# for i in range(1,21):
+#     num_list.append(i**2)
+# print(num_list)
+#
+# #方法二:列表推导式
+# num_list = [i**2 for i in range(1,21)]
+# print(num_list)
 
-#案例2:合并两个列表中的元素，并对合并的结果进行去重处理(去除列表中的重复元素)
+# #案例4:从一个数字列表中提取所有偶数，并计算其平方，组成一个新的列表。
+# num_list = [12,25,36,69,65,54,47,58,69,25,14,32,36]
+# new_list = [i**2 for i in num_list if i%2== 0 ]
+# print(new_list)
 
+#列表推导式
+# 用途：快速生成列表。
+# 语法：[返回值 for 元素 in 可迭代对象 if 条件]
+# 返回值：返回一个新的列表
 
+##练习
+# #练习1:将如下多个列表合并为一个列表，并去重重复元素，排好序(升序)后输出到控制台。
+# #合并如下三个列表，并对合并后的列表进行元素的去重，然后排好序后输出到控制台
+# # list2=['X','Z','T','Y','D','E','F','G']
+# # list1 = ['M','A','C','E','F','G','H','L',N','I','J','K','O']
+# # list3 = ['w','A','S','D']
+# list1 = ['M','A','C','E','F','G','H','L','N','I','J','K','O']
+# list2 = ['X','Z','T','Y','D','E','F','G']
+# list3 = ['W','A','S','D']
+# new_list1 = list1 + list2 + list3
+# new_list = []
+# for num in new_list1:
+#     if num not in new_list:
+#         new_list.append(num)
+# new_list.sort()
+# print(new_list)
 
+#练习2:
+#将如下列表中能被3 或5整除的元素提出来，并获取这些数字对应的平方，组成一个新的列表。
+# # list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30]
+# list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30]
+# new_list = [i**2 for i in list1 if i%2==0 or i%5==0]
+# print(new_list)
 
+# #练习3:将如下列表中的正数提取出来，封装为一个新的列表。
+# #list1 = [11, 2, 31, 4, -5, 15, 17, 28, 49, 10, -11, 16, 54, -14, 36, -16, 87, -39]
+# list1 = [11, 2, 31, 4, -5, 15, 17, 28, 49, 10, -11, 16, 54, -14, 36, -16, 87, -39]
+# new_list = [i for i in list1 if i > 0]
+# print(new_list)
